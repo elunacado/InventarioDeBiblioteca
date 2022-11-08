@@ -12,11 +12,6 @@ Comic
   -Fecha de Salida
   -Editorial
   -Estado (si esta dispnible o no)
-Manga
-  -Nombre de Arco
-  -Pais de Origen
-  -Num de Comic
-  -Estado (si esta dispnible o no)
 Pelicula
   -Titulo de la Pelicula
   -Fecha de Salida
@@ -27,6 +22,8 @@ Ensayos
   -Generación del Autor
   -Carrera del Autor
   -Estado (si esta dispnible o no)
+  
+Ademas de incluir un Manejador de archivos como clase para la manipulación de estos 
   
 El usuario entnces podra decidir si retirar un libro lo que cambiara el estado de este a "PRESTADO" o devolver un libro 
 para devolver el estado a "DISPONIBLE"
