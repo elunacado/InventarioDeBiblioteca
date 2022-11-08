@@ -21,10 +21,12 @@ Pelicula
   -Titulo de la Pelicula
   -Fecha de Salida
   -Duración
+  -Estado (si esta dispnible o no)
 Ensayos
   -Autor
   -Generación del Autor
   -Carrera del Autor
+  -Estado (si esta dispnible o no)
   
 El usuario entnces podra decidir si retirar un libro lo que cambiara el estado de este a "PRESTADO" o devolver un libro 
 para devolver el estado a "DISPONIBLE"
