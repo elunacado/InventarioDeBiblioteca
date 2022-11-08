@@ -8,20 +8,29 @@ Libros
   -Nombre del Libro
   -Autor
   -Estado (si esta dispnible o no)
+
 Comic
+  -Numero de Comic
   -Fecha de Salida
   -Editorial
   -Estado (si esta dispnible o no)
-Pelicula
-  -Titulo de la Pelicula
-  -Fecha de Salida
-  -Duración
-  -Estado (si esta dispnible o no)
+  Metodo:
+  Cambiara el numero conforme vayas pidiendo el comic
+  
 Ensayos
   -Autor
   -Generación del Autor
   -Carrera del Autor
   -Estado (si esta dispnible o no)
+
+Y tendras la opcion de rentar la pelicula pero esta cambiara conforme al tiempo
+Pelicula
+  -Titulo de la Pelicula
+  -Fecha de Salida
+  -Duración
+  -Estado (si esta dispnible o no)
+  Metodo:
+  Reemplazarse al llegar a cierta fecha
   
 Ademas de incluir un Manejador de archivos como clase para la manipulación de estos 
   
