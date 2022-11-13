@@ -45,4 +45,4 @@ este cambio se vea reflejado
 ________________________________________________________________________________________________________________________________________________
 Me parece interesante el problema porque me llama la atención la posible relacion entre la base de datos y la programación orientada a objetos
 ________________________________________________________________________________________________________________________________________________
-![image](https://user-images.githubusercontent.com/54047744/201500345-8458b692-2810-4701-b826-fad1cda55377.png)
+![image](https://user-images.githubusercontent.com/54047744/201500392-176e9309-6fae-4793-a60f-3e02eb1df766.png)
