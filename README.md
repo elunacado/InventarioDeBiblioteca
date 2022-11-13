@@ -2,7 +2,7 @@
 Inventario de Biblioteca utilizando OOP en el lenguaje de C++
 
 **Contexto** 
-A la biblioteca del colegio Liceo Inglés se le ha dado una donación de 50 librosy 30 peliculas lo cual por temas de infraestructura, logistica y personal ha demostrado ser mas de lo que podrian manejar por lo que han propuesto a su comunidad estudiantil un Hackathon planteando como problematica la facil revisioin del inventario y el facil prestamo en la biblioteca.
+A la biblioteca del colegio Liceo Inglés se le ha dado una donación de 50 librosy 30 peliculas lo cual por temas de infraestructura, logistica y personal ha demostrado ser mas de lo que podrian manejar por lo que han propuesto a su comunidad estudiantil un Hackathon planteando como problematica la facil revision del inventario y el facil prestamo en la biblioteca.
 
 **Instrucciones** 
 El usuario abre el programa
