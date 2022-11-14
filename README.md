@@ -12,7 +12,9 @@ Este proceso comienza ingresando el numero de serie del elemento y si este esta 
 El programa se cierra
 
 **Introducción** 
-En este programa se hara un display en forma de matriz en la cual se muestran los objetos registrados en la biblioteca y guardados en un archivo (al que el programa tendra acceso) con los siguientes Atributos
+El programa inicia pidiendole al usuario su Matricula y contraseña con el fin de tener un registro de quien tomo el articulo prestado
+
+Despues en el programa se hara un display en forma de matriz en la cual se muestran los objetos registrados en la biblioteca y  a su vez guardados en un archivo (al que el programa tendra acceso) con los siguientes Atributos
 
 Libros
   -Nombre del Libro
