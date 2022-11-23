@@ -1,25 +1,29 @@
-# InventarioDeBiblioteca
-Inventario de Biblioteca utilizando OOP en el lenguaje de C++
+# Registro De Biblioteca
+En esta registro el usuario podra registrar libros a la biblioteca ingresando sus datos Nombre/ID
+Para luego registrar el libro que quiera devolver 
 
 **Contexto** 
-A la biblioteca del colegio Liceo Inglés se le ha dado una donación de 50 libros, 30 películas, lo cual por temas de infraestructura, logística y personal ha demostrado ser más de lo que podrían manejar, por lo que han propuesto a su comunidad estudiantil un Hackathon planteando como problemática la fácil revisión del inventario y el fácil préstamo en la biblioteca.
+A la biblioteca del colegio Liceo Inglés por temas de infraestructura, logística y personal ha demostrado ser un problema el como los alumnos devuelven los libros, por lo que han propuesto a su comunidad estudiantil un Hackathon planteando como problemática la fácil revisión del registro de los libros a la biblioteca.
 
 **Instrucciones** 
 El usuario abre el programa
 El usuario introduce su matrícula y contraseña
-Una vez ingresado al sistema, el usuario toma la decisión si quiere retirar o devolver un elemento
-Este proceso comienza ingresando el número de serie del elemento y si este está disponible cambiará de Estado de DISPONIBLE a PRESTADO
-El programa se cierra
+
+Una vez ingresado al sistema, el usuario toma la decisión si quiere registrar un libro o si tiene la contraseña
+-Revisar el Inventario Total de los libros
+-Revisar el historial de cambios
+
+El programa esta en bucle gracias a un While(true) y se cierra cuando el usuario lo desee
 
 **Introducción** 
-El programa inicia pidiéndole al usuario su Matrícula y contraseña con el fin de tener un registro de quien tomo el artículo prestado
+El programa inicia pidiéndole al usuario su Matrícula y contraseña con el fin de tener un registro de quien devolvio el artículo prestado
 
-Después en el programa se hará un display en forma de matriz en la cual se muestran los objetos registrados en la biblioteca y a su vez guardados en un archivo (al que el programa tendrá acceso) con los siguientes Atributos
+Después en el programa se hará un display en la cual se muestran los objetos registrados en la biblioteca y a su vez guardados en un archivo (al que el programa tendrá acceso) con los siguientes Atributos
 
 Libros
   -Nombre del Libro
   -Autor
-  -Estado (si está disponible o no)
+  -Estado (si es optimo o dañado)
   
 Ensayos 
   -Autor 
@@ -27,16 +31,7 @@ Ensayos
   -Carrera del Autor 
   -Estado (si está disponible o no)
 
-Y películas que cambiaran conforme al tiempo cambiaran
 
-Película
-  -Título de la Película
-  -Fecha de Salida
-  -Duración
-  -Estado (si está disponible o no)
-  Método:
-  Reemplazarse al llegar a cierta fecha
-  
 Además de incluir un Manejado de archivos como clase para la manipulación de estos 
 
 ________________________________________________________________________________________________________________________________________________
