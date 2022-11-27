@@ -22,6 +22,7 @@ Ensayos
 Además de un lector de archivos, escritor de archivos e historial
 ____________________________________________________________________________________
 Me parece interesante el problema porque me llama la atención la posible relación entre la base de datos de la escuela con la programación orientada a objetos
+
 ![image](https://user-images.githubusercontent.com/54047744/204120557-f6b52d50-e03f-4ba7-ac7c-15ee38d27018.png)
 
 
