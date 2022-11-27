@@ -1,38 +1,104 @@
+#include "Adder.cpp"
+#include "PasswordManager.cpp"
+#include "Reader.cpp"
+#include "Historial.cpp"
 #include <iostream>
-#include "Files.cpp"
-#include "User.cpp"
-
 
 using namespace std;
 
-int main() {	
-	string name;
+int main() {
+	string username;
+	string pass;
 	string ID;
+	string correct = "230804";
+	bool admin = true;
 	int desicion;
 
-	Files bookfile;
+	Adder adder;
+	Reader read;
+	Historial historial;
 
-	cout << "Hi tell me your name pls: ";
-	cin >> name;
-	cout << "Tell me your student ID : ";
+	
+
+	cout << "Hola Bienvenid@ al registrador de libros por favor ingresa tu nombre para el registro: ";
+	cin >> username;
+	cout << "Y tu matricula tambien para el registro: ";
 	cin >> ID;
-	
-	User user(name, ID);
-	cout << user.getUserInfo()<<endl;
-	
+	cout << "Si eres un admin ingresa la contraseña si eres un usuario ingresa cualquier cosa " << endl << "la contraseña del admin es 230804"<<endl;
+	cin >> pass;
 
-	bookfile.agregarLibro(Book("TITULO: El problema de los 3 cuerpos ", "AUTOR: Ci Xin Liu ", false), 0);
-	bookfile.agregarLibro(Book("TITULO: El bosque obscuro ", "AUTOR: Ci Xin Liu ", true), 1);
-	bookfile.agregarLibro(Book("TITULO: El fin de la muerte ", "AUTOR: Ci Xin Liu ", false), 2);
-	bookfile.agregarLibro(Book("TITULO: IT ", "AUTOR: Stephen King ", true), 3);
-	bookfile.agregarLibro(Book("TITULO: Hamlet ", "AUTOR: William Shakespeare ", false), 4);
-	bookfile.agregarLibro(Book("TITULO: El principito ", "AUTOR: Antoine de Saint-Exup�ry ", true), 5);
-	bookfile.agregarLibro(Book("TITULO: Las mil y una noches ", "AUTOR: DESCONOCIDO ", false), 6);
-	bookfile.agregarLibro(Book("TITULO: Don Quijote de la Mancha ", "AUTOR: Miguel de Cervantes ", true), 7);
-	bookfile.agregarLibro(Book("TITULO: Orgullo y prejuicio ", "AUTOR: Jane Austen ", false), 8);
-	bookfile.agregarLibro(Book("TITULO: Frankenstein ", "AUTOR: Mary Shelley ", true),9);
-	
-	cout << bookfile.getFilesInfo() << endl;
-	cout << "Introduce el ID del libro que quieres devolver o retirar";
+	PasswordManager password(username,ID,pass,correct,admin);
+	cout<<password.getUserName()<<endl<<password.getID() << endl <<password.getPassword() << endl <<password.giveUserInfo() << endl;
+	while (true)
+	{
+		string tipo;
+		string titulo;
+		string autor;
+		string estado;
+		
+		if (password.PasswordChecker()==1) {
+			cout << "Hi admin " << password.getUserName() <<endl;
+			cout << "1. Agrega un documento:" << endl
+				<< "2. Dime el inventario de la biblioteca " << endl
+				<< "3. Dime el historial de los cambios en la biblioteca " << endl
+				<< "4. Salir " << endl;
 
+		}
+		else {
+			cout << "Hi user " << password.getUserName() << endl;
+			cout << "1. Agrega un documento:" << endl
+				<< "2. Dime el inventario de la biblioteca " << endl
+				<< "3. Salir " << endl;
+
+		}
+		
+		cin >> desicion;
+
+
+
+
+		if (desicion == 1) {
+
+			int n = 2;
+			bool status = true;
+			cout << "Que tipo de documeto es " << endl << "1.Ensayo " << endl << "2. Libro " << endl;
+			cin >> tipo;
+			cout << "Dime el titulo del documento (En lugar de espacios utilizar guiones bajos) " << endl;
+			cin >> titulo;
+			cout << "Dime el autor del documento (En lugar de espacios utilizar guiones bajos) " << endl;
+			cin >> autor;
+			cout << "Dime el estado del documento" << endl << "1. Seminuevo" << endl << "2.Nuevo" << endl;
+			cin >> estado;
+			adder.setAdder(tipo, titulo, autor, estado, status);
+			historial.setHistorial(username, ID, titulo);
+			historial.EscribirHistorial();
+			adder.Add();
+			cout << "Se registro el documento!" << endl;
+
+
+
+
+
+		}
+
+		else if (desicion == 2) {
+
+			read.ReadFiles();
+		}
+		else if (desicion == 3 && password.getAdmin() == 1){
+			historial.LeerHistorial();
+		}
+		else if (desicion == 3 && password.getAdmin() == 0) {
+			cout << "Hasta luegooooo";
+			break;
+		}
+		else if (desicion == 4 && password.getAdmin() == 1) {
+			cout << "Hasta luegooooo";
+			break;
+
+		}
+		else {
+			cout << "Eliige una opcion valida";
+		};
+	}
 }
