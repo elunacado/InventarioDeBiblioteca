@@ -1,62 +1,77 @@
+//Inclusion de archivos
 #include "Adder.cpp"
-#include "PasswordManager.cpp"
 #include "Reader.cpp"
 #include "Historial.cpp"
+#include "Librarian.cpp"
+#include "Borrower.cpp"
 #include <iostream>
 
+//implementaciones para que el codigo funcione
 using namespace std;
 
 int main() {
+	//variables necesarias para el funcionamiento del programa
 	string username;
-	string pass;
+	string password;
 	string ID;
+	string MenuDecision;
 	string correct = "230804";
 	bool admin = true;
 	int desicion;
 
+	//llamamos a las clases
+	Librarian librarian;
+	Borrower borrower;
 	Adder adder;
 	Reader read;
 	Historial historial;
 
-	
 
+	//obtenemos la info del usuario
 	cout << "Hola Bienvenid@ al registrador de libros por favor ingresa tu nombre para el registro: ";
 	cin >> username;
 	cout << "Y tu matricula tambien para el registro: ";
 	cin >> ID;
-	cout << "Si eres un admin ingresa la contraseña si eres un usuario ingresa cualquier cosa " << endl << "la contraseña del admin es 230804"<<endl;
-	cin >> pass;
+	cout << "¿Eres un bibliotecario? " << endl << "1. Si" << endl << "2. No, soy un estudiante"<<endl;
+	cin >> MenuDecision;
 
-	PasswordManager password(username,ID,pass,correct,admin);
-	cout<<password.getUserName()<<endl<<password.getID() << endl <<password.getPassword() << endl <<password.giveUserInfo() << endl;
+	//inicia el programa de consola de 
 	while (true)
 	{
 		string tipo;
 		string titulo;
 		string autor;
 		string estado;
-		
-		if (password.PasswordChecker()==1) {
-			cout << "Hi admin " << password.getUserName() <<endl;
+
+		//el usuario decide si es un bibliotecario o usuario
+		if (MenuDecision == "1") {
+			cout << "Si de verdad eres un bibliotecario ingresa la contraseña secreta (230804) ";
+			cin >> password;
+
+			librarian.PasswordChecker();
+			if (librarian.getAdmin() == true) {
+				//MENU DE BIBLIOTECARIO
+				cout << "Hola bibliotecario " << librarian.getUserName() << endl;
+				cout << "1. Agrega un documento:" << endl
+					<< "2. Dime el inventario de la biblioteca " << endl
+					<< "3. Dime el historial de los cambios en la biblioteca " << endl
+					<< "4. Salir " << endl;
+			}
+		}
+		else {
+			//MENU DE USUARIO
+			cout << "Hola usuario " << borrower.getUserName() << endl;
 			cout << "1. Agrega un documento:" << endl
 				<< "2. Dime el inventario de la biblioteca " << endl
-				<< "3. Dime el historial de los cambios en la biblioteca " << endl
 				<< "4. Salir " << endl;
 
 		}
-		else {
-			cout << "Hi user " << password.getUserName() << endl;
-			cout << "1. Agrega un documento:" << endl
-				<< "2. Dime el inventario de la biblioteca " << endl
-				<< "3. Salir " << endl;
-
-		}
-		
+		//recibe la decision del segundo menu
 		cin >> desicion;
 
 
 
-
+		//La decision 1 es la de añadir algun libro a la biblioteca
 		if (desicion == 1) {
 
 			int n = 2;
@@ -76,29 +91,26 @@ int main() {
 			cout << "Se registro el documento!" << endl;
 
 
-
-
-
 		}
-
+		//La segunda es la de leer el archivo de la biblioteca
 		else if (desicion == 2) {
 
 			read.ReadFiles();
 		}
-		else if (desicion == 3 && password.getAdmin() == 1){
+		else if (desicion == 3 && librarian.PasswordChecker() == true) {
 			historial.LeerHistorial();
 		}
-		else if (desicion == 3 && password.getAdmin() == 0) {
-			cout << "Hasta luegooooo";
-			break;
-		}
-		else if (desicion == 4 && password.getAdmin() == 1) {
+		else if (desicion == 4 && librarian.PasswordChecker() == true) {
 			cout << "Hasta luegooooo";
 			break;
 
 		}
+		else if (desicion == 3 && librarian.PasswordChecker()==false) {
+			cout << "Hasta luegooooo";
+			break;
+		}
 		else {
 			cout << "Eliige una opcion valida";
 		};
+	};
 	}
-}
