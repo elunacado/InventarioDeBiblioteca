@@ -5,7 +5,7 @@
 using namespace std;
 
 Historial::Historial(){}
-
+//Historial se encarga de tomar ciertos datos (nombre, ID y titulo de libro para añadirlos a un historial .txt)
 void Historial::setHistorial(string _name, string _ID, string _title) {
 	name = _name;
 	ID = _ID;
