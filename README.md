@@ -23,6 +23,6 @@ Además de un lector de archivos, escritor de archivos e historial
 ____________________________________________________________________________________
 Me parece interesante el problema porque me llama la atención la posible relación entre la base de datos de la escuela con la programación orientada a objetos
 
-![image](https://user-images.githubusercontent.com/54047744/204690785-e66633e8-25ac-47cb-8cb6-508b15bfdd0c.png)
+![image](https://user-images.githubusercontent.com/54047744/204804677-14dff897-4712-4781-ac82-12ce2298aec2.png)
 
 
