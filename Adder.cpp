@@ -6,6 +6,8 @@ using namespace std;
 
 Adder::Adder() {};
 
+//Adder se encarga de añadir el libro registrado  a la biblioteca para despues encontrarlo en el historial
+
 void Adder::setAdder(string _tipo,string _titulo, string _autor, string _estado, bool _status) {
 	tipo = _tipo;
 	titulo = _titulo;
